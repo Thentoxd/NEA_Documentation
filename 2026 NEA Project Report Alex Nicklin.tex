@@ -205,31 +205,45 @@ toml++ is licensed under the terms of the MIT license - see \href{https://githu
 \includegraphics[width=0.6\textwidth]{Media/2025-10-26 09_01_36-Screenshot First UI MediaFileRenamer}
 
 \subsection{Documention}
-This Documentation was written in Latex.
-To edit and compile the Latex documentation, first:
+This Documentation is written in Latex. To edit and compile the Latex documentation:
 
 \begin{itemize}
     \item Within CLion, install the extensions TeXiFy-IDEA and intellij-pdf-viewer
     \item Install MiKTeX from \url{https://miktex.org/download}
     \item Set MiKTeX to check and install updates automatically. Wait until it says updates are avaiable and do those
-    \item I would recommend a full restart of the computer at this point
+    \item I would recommend a restart of your computer at this point
 \end{itemize}
 
-There are two source files for the documentation:
 
+This NEA project report now lives in its own GitHub repository: \url{https://github.com/Thentoxd/NEA_Documentation.git}
+There a PDF copy of the final report can be downloaded from the out directory.
+Below are the steps to clone and edit the source files if changes need to made.
+
+
+Clone into a new project within CLion.
+There are two main source files which make up this report:
 
 \begin{enumerate}
-   \item 2026 NEA Project Report Alex Nicklin.tex
-   \item 2026 NEA Project Report Alex Nicklin.bib
+    \item 2026 NEA Project Report Alex Nicklin.tex
+    \item 2026 NEA Project Report Alex Nicklin.bib
 \end{enumerate}
 
-[1] is the Latex source file for the report and [2] is the bibliography.
+The first is the Latex source file for the report and the second is the bibliography.
 
-We used BibTeX and MikTeX to compile these two source files to make the final, single report file in pff format.
+We used BibTeX and MikTeX to compile these two source files to make the final, single report file in PDF format.
 
-The Media subfolder contains any pictures referenced by [1].
+The Media subfolder contains any pictures referenced in the .tex file.
 
-In CLion, we need to add two custom Run/Debug configurations to "compile" [1] and [2].
+In CLion, we need to add two custom Run/Debug configurations to compile the tex and bibliography.
+
+To compile the Latex source, click on Add Configuration
+
+\begin{itemize}
+    \item Select the Latex config template
+    \item Add a name such as "My Latex Compile"
+    \item In the main file to compile, select the .tex file
+    \item Leave other settings in place. Click OK
+\end{itemize}
 
 \includegraphics[width=0.8\textwidth]{Media/2025-11-11 BibTeX Run_Debug Configurations}
 
