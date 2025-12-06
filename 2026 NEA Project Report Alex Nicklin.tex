@@ -104,6 +104,9 @@ BRU is an excellent and powerful tool but it has a few problems and weaknesses. 
 Code Modules credited to other people:
 \begin{itemize}
     \item spdlog\cite{spdlog} is used as a logging library
+    \item CLI11\cite{CLI11} is used as a command line parsing library
+    \item json\cite{spdlog} is used as a json parsing library
+    \item exiv2\cite{spdlog} is used as a EXIF read/write library
 \end{itemize}
 
 \section{Analysis}
@@ -111,9 +114,23 @@ This is the Analysis section
 
 
 \section{Documented Design}
-This is the Documented Design section
+\includegraphics[width=1\textwidth]{Media/Main Class Diagram}
 
+\begin{center}
+\includegraphics[width=.6\textwidth]{Media/ModelProblem1}
+\end{center}
 
+\begin{center}
+    \includegraphics[width=.6\textwidth]{Media/ModelProblem2}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{Media/ModelProblem3}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{Media/ModelProblem4}
+\end{center}
 
 
 \section{Technical Solution}
@@ -181,6 +198,10 @@ All my source code is available under the GPL licence. GPL is a copyleft license
 
 \smallskip
 spdlog\cite{spdlog} is used as a logging library. Code uses the MIT licence, so can be used in both open source and proprietry programs.
+
+CLI11\cite{CLI11} is a command line parser for C++11. (c) 2017-2025 University of Cincinnati.
+
+
 
 \subsection{Command Line Parameters}
 We are using the third-party CLI11 library to process command line parameters.
@@ -271,6 +292,38 @@ To try and fix this, we use the Valgrind library to trace memory usage.}
 \section{Evaluation}
 
 This is the Evaluation section
+
+\section{Appendix A - Legal Notices}
+
+CLI11\cite{CLI11} is a command line parser for C++11.
+\begin{verbatim}
+CLI11 2.6 Copyright (c) 2017-2025 University of Cincinnati, developed by Henry
+Schreiner under NSF AWARD 1414736. All rights reserved.
+
+Redistribution and use in source and binary forms of CLI11, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software without
+   specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+\end{verbatim}
 
 
 \printbibliography
