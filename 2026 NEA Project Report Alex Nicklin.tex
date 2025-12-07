@@ -24,7 +24,12 @@
 }
 
 
+\usepackage[dvipsnames]{xcolor}
+
 \usepackage[backend=bibtex]{biblatex}
+% \usepackage[backend=biber,style=numeric,sortcites,natbib=true,sorting=none]{biblatex}
+
+
 \addbibresource{2026NEAProjectReportAlexNicklin.bib}
 
 
@@ -70,7 +75,6 @@
     \end{center}
 \end{titlepage}
 
-
 \tableofcontents
 
 \section{Introduction and Declaration}\label{sec:introduction-and-declaration}
@@ -114,11 +118,22 @@ This is the Analysis section
 
 
 \section{Documented Design}
-\includegraphics[width=1\textwidth]{Media/Main Class Diagram}
+\colorbox{BurntOrange}{The original design was for the Model-View-Controller pattern.}
 
-\begin{center}
-\includegraphics[width=.6\textwidth]{Media/ModelProblem1}
-\end{center}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.6\textwidth]{Media/MVC}
+  \caption{Model View Control pattern}
+  \label{fig:1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.6\textwidth]{Media/ModelProblem1}
+    \caption{Not sure what this was for}
+    \label{fig:2}
+\end{figure}
+
 
 \begin{center}
     \includegraphics[width=.6\textwidth]{Media/ModelProblem2}
@@ -132,6 +147,7 @@ This is the Analysis section
     \includegraphics[width=1\textwidth]{Media/ModelProblem4}
 \end{center}
 
+\includegraphics[width=1\textwidth]{Media/Main Class Diagram}
 
 \section{Technical Solution}
 
@@ -148,7 +164,6 @@ I have created build IDE's using CLion under Windows 11 and Ubuntu Desktop 25.10
 
 
 
-\linebreak
 \linebreak
 \textit{Windows installers and Ubuntu packages will be created for end users of this tool.
 As this is a programming report, how these installers and packages were created is not documented here.}
@@ -292,6 +307,8 @@ To try and fix this, we use the Valgrind library to trace memory usage.}
 \section{Evaluation}
 
 This is the Evaluation section
+
+\listoffigures
 
 \section{Appendix A - Legal Notices}
 
