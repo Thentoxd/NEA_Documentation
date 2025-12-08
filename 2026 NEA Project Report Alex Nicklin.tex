@@ -116,11 +116,12 @@ Code Modules credited to other people:
 \end{itemize}
 
 \section{Analysis}
-\colorbox{BurntOrange}{Programs such as Nextcloud memories order by Original Date Taken}
+\subsection{Problem Analysis}
+There exists other programs that achieves bulk file renaming. For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utlity} provides most of the functions that I'm planning on implementing in this project. However, there exists no programs (to my knowledge) that can change the EXIF Date Taken Original to a given input. This is what I'm hoping to achieve in my project and one of the main reasons I chose to do this project in the first place.
 
-\colorbox{BurntOrange}{For old scans/photos - this is not set}
-
-\colorbox{BurntOrange}{For example - in pic below the computer and corrider pictures are old but appear as a current/new photo}
+\subsection{Research}
+The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud. This becomes an incredibly challenging issue when trying to sort through all of the photos stored.
+For example, the pictures below stored on Nextcloud are not ordered:
 
 \begin{figure}[ht]
     \centering
@@ -129,12 +130,9 @@ Code Modules credited to other people:
     \label{fig:1}
 \end{figure}
 
+The computer and corridor pictures are old photos but appear as current/new photos.
 
-\colorbox{BurntOrange}{Bulk Rename Utility has options to set EXIF Create Datetime (Original)}
-
-\colorbox{BurntOrange}{But can only set following the file's Create or Modify date}
-
-\colorbox{BurntOrange}{Just doesn't work for very old scans/photos as date can't be before 1st Jan 1970 etc}
+Other bulk renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields (the ones that OneDrive and Nextcloud use to order their photos).
 
 \begin{figure}[ht]
     \centering
