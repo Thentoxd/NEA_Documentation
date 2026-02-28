@@ -70,7 +70,7 @@
 
         \vspace{0.5cm}
 
-        19\textsuperscript{th} October 2025 \\
+        27\textsuperscript{th} February 2025 \\
 
     \end{center}
 \end{titlepage}
@@ -117,7 +117,7 @@ Code Modules credited to other people:
 
 \section{Analysis}
 \subsection{Problem Analysis}
-There exists other programs that achieves bulk file renaming. For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utlity} provides most of the functions that I'm planning on implementing in this project. However, there exists no programs (to my knowledge) that can change the EXIF Date Taken Original to a given input. This is what I'm hoping to achieve in my project and one of the main reasons I chose to do this project in the first place.
+There exists other programs that achieves bulk file renaming. For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utlity} provides most of the functions that I'm planning on implementing in this project. However, there exists no programs (to my knowledge) that are intuitive to understand, has Linux support and can change the EXIF Date Taken Original to a given input. This is what I'm hoping to achieve in my project and the main reasons I chose to do this project in the first place.
 
 \subsection{Research}
 The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud. This becomes an incredibly challenging issue when trying to sort through all of the photos stored.
@@ -132,7 +132,17 @@ For example, the pictures below stored on Nextcloud are not ordered:
 
 The computer and corridor pictures are old photos but appear as current/new photos.
 
-Other bulk renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields (the ones that OneDrive and Nextcloud use to order their photos).
+Other bulk renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.
+
+\subsubsection{Choosing a Programming Language}
+Choosing what programming langauge to write this software in is mostly going to be dependent on my general familiarity with the langauge.
+My top languages based on familiarity would be: C++, Java and Python.
+However, Python and Java are not native programming languages and require their own interpreters to run.
+This would make my program not-native and require installation of other interpreters to run.
+C++ is a native programming language as operating systems such as Windows or Linux have it automatically installed for its low-level hardware control and ability to manage system resources efficiently.
+
+\subsubsection{Choosing Libraries}
+
 
 \begin{figure}[ht]
     \centering
@@ -140,6 +150,9 @@ Other bulk renaming programs allow you to edit the EXIF Create Datetime (Origina
     \caption{Bulk Rename Utility - EXIF options}
     \label{fig:2}
 \end{figure}
+
+\subsection{Identifying a Third-Party}
+test!
 
 \section{Documented Design}
 \colorbox{BurntOrange}{The original design was for the Model-View-Controller pattern.}
@@ -218,10 +231,6 @@ Other bulk renaming programs allow you to edit the EXIF Create Datetime (Origina
 
 MediaFileRenamer has been written in C++ using the QT 6 cross-platform UI library \cite{QT}.
 I have created build IDE's using CLion under Windows 11 and Ubuntu Desktop 25.10 to code and test this tool.
-
-
-
-
 
 \linebreak
 \textit{Windows installers and Ubuntu packages will be created for end users of this tool.
