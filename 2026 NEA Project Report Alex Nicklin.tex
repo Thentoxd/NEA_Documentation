@@ -191,7 +191,18 @@ Other bulk renaming programs allow you to edit the EXIF Create Datetime (Origina
 \vspace*{0.25cm}
 \textit{Inside this QGroupBox, from top to bottom, are}
 \begin{itemize}
-    \item \textit{A QCheckBox with the objectName attempt\_findDate\_checkBox and text "Try to extract date from existing filename"}
+    \item \textit{A QCheckBox with:}
+    \begin{itemize}
+        \item \textit{objectName attempt\_findDate\_checkBox}
+        \item \textit{text "Try to extract date from existing filename"}
+        \item \textit{Horizontal size policy of Minimum}
+        \item \textit{Horizontal size policy of Fixed}
+        \item \textit{Checkable and Checked set to True}
+    \end{itemize}
+    \item \textit{A HBoxLayout with:}
+    \begin{itemize}
+        \item \textit{A QLabel called year\_label}
+    \end{itemize}
     \item
     \item
     \item
@@ -225,7 +236,7 @@ Follow these steps to create a Windows development environment:
     \item Update all CLion Plugins
     \item Clone the MediaFileRenamer repository from \url{https://github.com/Thentoxd/MediaFileRenamer}
     \item MinGW toolchain dialog should appear - Click Next
-    \item In the profile, add the following CMAKE options: \begin{verbatim}"-DCMAKE_PREFIX_PATH=C:\Qt\6.10.0\mingw_64\lib\cmake"\end{verbatim}
+    \item In the profile, add the following CMAKE options. Double check versions numbers, you will have something later than 6.10.0: \begin{verbatim}"-DCMAKE_PREFIX_PATH=C:\Qt\6.10.0\mingw_64\lib\cmake"\end{verbatim}
     \item Build files should now be created
     \item Now load up main.cpp and click Run. The project should compile and execute the program
     \item Under cmake-build-debug/logs will be the logfile generated from the program
