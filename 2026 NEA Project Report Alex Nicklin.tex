@@ -175,6 +175,28 @@ Other bulk renaming programs allow you to edit the EXIF Create Datetime (Origina
 
 \includegraphics[width=1\textwidth]{Media/2025-12-09 Media File Renamer}
 
+\vspace*{0.25cm}
+\textit{We now have a working, basic renamer utility. But the limitation is we only have one fixed chain of renaming components. We can switch individual parts on or off, but we can re-format the chain.}
+\vspace*{0.25cm}
+\includegraphics[width=1\textwidth]{Media/2026-02-27 Media File Renamer}
+\vspace*{0.25cm}
+\textit{The current Date Prefix widget consists of a QGroupBox with the following properties:}
+\begin{itemize}
+    \item \textit{maximumSize (width) of 300}
+    \item \textit{a size policy of Preferred, Preferred (x,y)}
+    \item \textit{stretch of 0}
+    \item \textit{checkable should now be turned off (makes no sense with the chain editor)}
+    \item \textit{with a vertical layout}
+\end{itemize}
+\vspace*{0.25cm}
+\textit{Inside this QGroupBox, from top to bottom, are}
+\begin{itemize}
+    \item \textit{A QCheckBox with the objectName attempt\_findDate\_checkBox and text "Try to extract date from existing filename"}
+    \item
+    \item
+    \item
+\end{itemize}
+
 \section{Technical Solution}
 
 \begin{center}
