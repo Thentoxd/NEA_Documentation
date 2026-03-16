@@ -73,7 +73,7 @@
 
         \vspace{0.5cm}
 
-        27\textsuperscript{th} February 2026 \\
+        16\textsuperscript{th} March 2026 \\
 
     \end{center}
 \end{titlepage}
@@ -109,9 +109,8 @@ Code Modules credited to other people:
 \begin{itemize}
     \item spdlog\cite{spdlog} is used as a logging library
     \item CLI11\cite{CLI11} is used as a command line parsing library
-    %TODO: implement cites for json and exiv2
-    \item json\cite{spdlog} is used as a json parsing library
-    \item exiv2\cite{spdlog} is used as a EXIF read/write library
+    \item json\cite{json} is used as a json parsing library
+    \item exiv2\cite{exiv2} is used as a EXIF read/write library
 \end{itemize}
 
 \section{Analysis}
@@ -120,6 +119,7 @@ There exists other programs that achieves bulk file renaming.
 For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utility} provides most of the functions that I'm planning on implementing in this project.
 However, there exists no programs (to my knowledge) that are intuitive to understand, has Linux support and can change the EXIF Date Taken Original to a given input.
 
+%TODO: General work
 \subsection{Research}
 The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud.
 This becomes an incredibly challenging issue when trying to sort through all the photos stored.
@@ -133,8 +133,7 @@ For example, the pictures below stored on Nextcloud are not ordered:
 \end{figure}
 
 The computer and corridor pictures are old photos but appear as current/new photos.
-
-Other bulk renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.
+Other Bulk Renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.
 
 %TODO: General work
 \subsubsection{Choosing a Programming Language}
@@ -159,6 +158,7 @@ It's praised for multiple reasons:
     This makes UI programming cleaner and easier.
 \end{itemize}
 
+%TODO: Begin write-up!
 \subsubsection{QT Designer}
 
 
@@ -176,12 +176,12 @@ It makes debugging significantly easier during the initial stages of development
 
 \bigskip
 
-Json\cite{spdlog} is a json parsing library used for storing data in a config.json file.
-My program will use the library to correctly initialise and for storing information.
+Json\cite{json} is a json parsing library used for storing data in a config.json file.
+My program will use the library to correctly initialize and for storing information.
 
 \bigskip
 
-exiv2\cite{spdlog} is an EXIF read/write library that will be used for modifying the Date Taken fields on files.
+exiv2\cite{exiv2} is an EXIF read/write library that will be used for modifying the Date Taken fields on files.
 This is crucial for my program, as developing my own read/write functionality is a separate project of its own.
 
 \begin{figure}[ht]
@@ -194,6 +194,9 @@ This is crucial for my program, as developing my own read/write functionality is
 %TODO: third party???
 \subsection{Identifying a Third-Party}
 test!
+
+\subsection{Project Objectives}
+
 
 \section{Documented Design}
 \colorbox{BurntOrange}{The original design was for the Model-View-Controller pattern.}
