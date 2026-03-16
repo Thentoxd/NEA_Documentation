@@ -27,10 +27,13 @@
 \usepackage[dvipsnames]{xcolor}
 
 \usepackage[backend=bibtex]{biblatex}
-% \usepackage[backend=biber,style=numeric,sortcites,natbib=true,sorting=none]{biblatex}
+% \usepackage[backend=biber,style=numeric,sortcites,natbib=true,sorting=none]{biblatex}f
 
 
 \addbibresource{2026NEAProjectReportAlexNicklin.bib}
+
+%TODO:
+% Create a list of objectives
 
 
 % Document
@@ -94,10 +97,6 @@ BRU is an excellent and powerful tool but it has a few problems and weaknesses. 
     \item Code is not free for commercial use
 \end{itemize}
 
-
-
-
-
 \textit{The design will be as simple as possible. Adding unnecessary back-ends, such as a database, will not be done. If a well known and maintained library for a feature is commonly available, it will be used.}
 \subsection{Declaration}
 \textbf{All code - except those modules listed below - and this report is my own work.}
@@ -106,21 +105,24 @@ BRU is an excellent and powerful tool but it has a few problems and weaknesses. 
 
 \textbf{No search for other NEA's close to this one has been done. All code and design is my solo attempt to best deliver this project and expand on the programming aspects of the course.}
 
-
 Code Modules credited to other people:
 \begin{itemize}
     \item spdlog\cite{spdlog} is used as a logging library
     \item CLI11\cite{CLI11} is used as a command line parsing library
+    %TODO: implement cites for json and exiv2
     \item json\cite{spdlog} is used as a json parsing library
     \item exiv2\cite{spdlog} is used as a EXIF read/write library
 \end{itemize}
 
 \section{Analysis}
 \subsection{Problem Analysis}
-There exists other programs that achieves bulk file renaming. For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utlity} provides most of the functions that I'm planning on implementing in this project. However, there exists no programs (to my knowledge) that are intuitive to understand, has Linux support and can change the EXIF Date Taken Original to a given input. This is what I'm hoping to achieve in my project and the main reasons I chose to do this project in the first place.
+There exists other programs that achieves bulk file renaming.
+For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utility} provides most of the functions that I'm planning on implementing in this project.
+However, there exists no programs (to my knowledge) that are intuitive to understand, has Linux support and can change the EXIF Date Taken Original to a given input.
 
 \subsection{Research}
-The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud. This becomes an incredibly challenging issue when trying to sort through all of the photos stored.
+The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud.
+This becomes an incredibly challenging issue when trying to sort through all the photos stored.
 For example, the pictures below stored on Nextcloud are not ordered:
 
 \begin{figure}[ht]
@@ -134,6 +136,7 @@ The computer and corridor pictures are old photos but appear as current/new phot
 
 Other bulk renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.
 
+%TODO: General work
 \subsubsection{Choosing a Programming Language}
 Choosing what programming langauge to write this software in is mostly going to be dependent on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
@@ -141,15 +144,45 @@ However, Python and Java are not native programming languages and require their 
 This would make my program not-native and require installation of other software to run.
 C++ is a native programming language since you can compile the code into an executable
 
+%TODO: NEED a structure to compare different GUI frameworks!
+\subsubsection{Choosing a GUI Framework}
+When researching the best GUI framework with C++ support to use for this application, QT was by far highly recommended as the best of them all.
+It's praised for multiple reasons:
+\begin{itemize}
+    \item Maturity: It's first stable release was in \href{https://wiki.control.fel.cvut.cz/osp/prednasky/gui/the-qt-story/}{September 1996}, in that time it's built a strong community that exists to help other people using the framework.
+    If you're having an issue, there is a very good chance that there are online forums on that subject with lots of documentation and details.
+    \item Custom UI Designer: QT Designer is a drag-and-drop software tool that is used for easily creating a GUI interface.
+    It saves the result as a .ui file and can be used on projects that use QT.
+    \item Easy-to-use Communication System: QT has an event communication system called \textbf{signals and slots}.
+    You can connect a widget (buttons, text boxes, labels, etc.) to a method in the code.
+    During an event, the widget emits a signal and the method receives the signal via a slot.
+    This makes UI programming cleaner and easier.
+\end{itemize}
+
+\subsubsection{QT Designer}
+
+
 \subsubsection{Choosing Libraries}
 spdlog\cite{spdlog} is a very fast C++ logging library.
 I will be using spdlog as a debugging tool because it creates an easy way to log details with different severities (e.g. info, debug and warning) including the location of the log in the code:
 
+%TODO: describe in detail WHY you used these libraries compared to others that were available.
 \bigskip
 \includegraphics[width=0.8\textwidth]{Media/2025-10-23 11_15_40 logging}
 \bigskip
 
-spglog also stores a 5MB rotating log file for storing all the logs from all time.
+CLI11\cite{CLI11} is a command line parsing library that allows users to easily create and implement commands passed into the console.
+It makes debugging significantly easier during the initial stages of development.
+
+\bigskip
+
+Json\cite{spdlog} is a json parsing library used for storing data in a config.json file.
+My program will use the library to correctly initialise and for storing information.
+
+\bigskip
+
+exiv2\cite{spdlog} is an EXIF read/write library that will be used for modifying the Date Taken fields on files.
+This is crucial for my program, as developing my own read/write functionality is a separate project of its own.
 
 \begin{figure}[ht]
     \centering
@@ -158,6 +191,7 @@ spglog also stores a 5MB rotating log file for storing all the logs from all tim
     \label{fig:2}
 \end{figure}
 
+%TODO: third party???
 \subsection{Identifying a Third-Party}
 test!
 
