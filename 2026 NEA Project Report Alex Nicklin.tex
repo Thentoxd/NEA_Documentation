@@ -137,18 +137,19 @@ Other bulk renaming programs allow you to edit the EXIF Create Datetime (Origina
 \subsubsection{Choosing a Programming Language}
 Choosing what programming langauge to write this software in is mostly going to be dependent on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
-However, Python and Java are not native programming languages and require their own interpreters to run.
-This would make my program not-native and require installation of other interpreters to run.
-C++ is a native programming language as operating systems such as Windows or Linux have it automatically installed for its low-level hardware control and ability to manage system resources efficiently.
+However, Python and Java are not native programming languages and require their own interpreters to convert from bytecode to executable machine code.
+This would make my program not-native and require installation of other software to run.
+C++ is a native programming language since you can compile the code into an executable
 
 \subsubsection{Choosing Libraries}
 spdlog\cite{spdlog} is a very fast C++ logging library.
-I will be using spdlog as it has already created an easy way to log details with different severities (e.g. info, debug and warning):
+I will be using spdlog as a debugging tool because it creates an easy way to log details with different severities (e.g. info, debug and warning) including the location of the log in the code:
 
 \bigskip
 \includegraphics[width=0.8\textwidth]{Media/2025-10-23 11_15_40 logging}
+\bigskip
 
-spglog
+spglog also stores a 5MB rotating log file for storing all the logs from all time.
 
 \begin{figure}[ht]
     \centering
@@ -207,7 +208,12 @@ Problem that the Date widget is doing two seperate functions - adding the date t
 \includegraphics[width=1\textwidth]{Media/2026-03-02 11_05_59-Media File Renamer}
 
 \vspace*{0.25cm}
-\textit{We now have a working, basic renamer utility. But the limitation is we only have one fixed chain of renaming components. We can switch individual parts on or off, but we can re-format the chain.}
+We now have a working, basic renamer utility.
+But the limitation is we only have one fixed chain of renaming components.
+We can switch individual parts on or off, but we can't re-format the chain.
+Another issue with the design is that the "Date Prefix" component does two jobs at once.
+It tries to create a new filename while also editing the metadata to change the Date Taken Original field.
+
 \vspace*{0.25cm}
 \includegraphics[width=1\textwidth]{Media/2026-02-27 Media File Renamer}
 \vspace*{0.25cm}
