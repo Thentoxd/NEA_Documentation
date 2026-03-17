@@ -125,29 +125,43 @@ Code Modules credited to other people:
 %TODO: General work (they are first being introduced to this now!)
 \subsection{Problem Analysis}
 A Bulk File Rename Utility is a program that can rename a group of files automatically given a set of rules or patterns that the final file name has to follow.
-%TODO: INSERT PHOTOS OF BEFORE AND AFTER
-
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Media/before}
+        \caption{Before using a Bulk Rename Utility}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Media/after}
+        \caption{After using a Bulk Rename Utility}
+    \end{minipage}
+\end{figure}
 %TODO: EXIF VS MetaData???
+
 Each photo has a set of technical details stored that describe information about the photo called the metadata.
 The metadata stores a Date Taken Original field, that includes a date and time that photo was taken.
 When attempting to store photos on file hosting services such as OneDrive or Nextcloud, the photos are ordered by that field.
-I chose this project because there exists no Bulk Rename Utility program that has the ability to change the Date Taken Original Field.
+If the Date Taken Original field isn't correctly assigned, then files on the server will not be correctly ordered.
 
-For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utility} provides most of the functions that I'm planning on implementing in this project.
-However, there exists no programs (to my knowledge) that are intuitive to understand, has Linux support and can change the EXIF Date Taken Original to a given input.
+%TODO: CROP OUT DAD'S FACE + SN
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.983\textwidth]{Media/MemoriesNotOrder}
+    \caption{Nextcloud Memories not ordered correctly}
+    \label{fig:1}
+\end{figure}
+
+The computer and hallway photos were taken from the 80s, but as they do not have the correct metadata set, they appear next to new photos.
+I chose this project because there exists no Bulk Rename Utility program that has the ability to change the Date Taken Original Field.
 
 %TODO: General work
 \subsection{Research}
 The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud.
 This becomes an incredibly challenging issue when trying to sort through all the photos stored.
 For example, the pictures below stored on Nextcloud are not ordered:
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=1\textwidth]{Media/MemoriesNotOrder}
-    \caption{Nextcloud Memories not ordered correctly}
-    \label{fig:1}
-\end{figure}
 
 The computer and corridor pictures are old photos but appear as current/new photos.
 Other Bulk Renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.
