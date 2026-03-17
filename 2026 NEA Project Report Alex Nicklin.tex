@@ -84,26 +84,34 @@
 
 \section{Introduction and Declaration}\label{sec:introduction-and-declaration}
 
+%This goal of this project is the write a \textbf{utility program} for renaming files. The main target will be media files on the Ubuntu operating system.
+%
+%Most Windows users will use the Bulk Rename Utility\cite{BulkRenameUtility} to rename large numbers of files.
+%BRU is an excellent and powerful tool but it has a few problems and weaknesses. They are, in order of importance:
+%\begin{itemize}
+%    \item Not available on Linux
+%    \item Limited options to change media file's meta-data
+%    \item Not intuitive to use. A powerful utility once you understand it, but not easy for most casual users
+%    \item Code is closed-source
+%    \item Code is not free for commercial use
+%\end{itemize}%
+
+%\textit{The design will be as simple as possible. Adding unnecessary back-ends, such as a database, will not be done. If a well known and maintained library for a feature is commonly available, it will be used.}%
+
+%TODO: General work
 \subsection{Introduction}
-This goal of this project is the write a \textbf{utility program} for renaming files. The main target will be media files on the Ubuntu operating system.
+This is the documentation for my AQA A-Level Computer Science NEA Project.
+The Latex typesetting is used for writing dissertations and papers at academic institutions, so I will be using it in this documentation for practise into my Computer Science degree.
+Purely for the reasons of practise, I will be including reference citations, a legal copyright notice and a declaration below.
 
-Most Windows users will use the Bulk Rename Utility\cite{BulkRenameUtility} to rename large numbers of files.
-BRU is an excellent and powerful tool but it has a few problems and weaknesses. They are, in order of importance:
-\begin{itemize}
-    \item Not available on Linux
-    \item Limited options to change media file's meta-data
-    \item Not intuitive to use. A powerful utility once you understand it, but not easy for most casual users
-    \item Code is closed-source
-    \item Code is not free for commercial use
-\end{itemize}
-
-\textit{The design will be as simple as possible. Adding unnecessary back-ends, such as a database, will not be done. If a well known and maintained library for a feature is commonly available, it will be used.}
 \subsection{Declaration}
 \textbf{All code - except those modules listed below - and this report is my own work.}
 
 \textbf{No previous or related utility program has been reviewed before designing and coding this project. }
 
 \textbf{No search for other NEA's close to this one has been done. All code and design is my solo attempt to best deliver this project and expand on the programming aspects of the course.}
+
+\bigskip
 
 Code Modules credited to other people:
 \begin{itemize}
@@ -114,9 +122,17 @@ Code Modules credited to other people:
 \end{itemize}
 
 \section{Analysis}
-%TODO: General work
+%TODO: General work (they are first being introduced to this now!)
 \subsection{Problem Analysis}
-There exists other programs that achieves bulk file renaming.
+A Bulk File Rename Utility is a program that can rename a group of files automatically given a set of rules or patterns that the final file name has to follow.
+%TODO: INSERT PHOTOS OF BEFORE AND AFTER
+
+%TODO: EXIF VS MetaData???
+Each photo has a set of technical details stored that describe information about the photo called the metadata.
+The metadata stores a Date Taken Original field, that includes a date and time that photo was taken.
+When attempting to store photos on file hosting services such as OneDrive or Nextcloud, the photos are ordered by that field.
+I chose this project because there exists no Bulk Rename Utility program that has the ability to change the Date Taken Original Field.
+
 For example, this \href{https://www.bulkrenameutility.co.uk/}{Bulk Rename Utility} provides most of the functions that I'm planning on implementing in this project.
 However, there exists no programs (to my knowledge) that are intuitive to understand, has Linux support and can change the EXIF Date Taken Original to a given input.
 
