@@ -137,10 +137,11 @@ A Bulk File Rename Utility is a program that can rename a group of files automat
         \centering
         \includegraphics[width=\textwidth]{Media/after}
         \caption{After using a Bulk Rename Utility}
-    \end{minipage}
+    \end{minipage}\label{fig:figure}
 \end{figure}
-%TODO: EXIF VS MetaData???
 
+It's very easy to see where a Bulk File Rename Utility will come in handy.
+A camera will always generate filenames that don't represent the content of the image, so when capturing multiple photos of the same subject, they should be given a consistent filename.
 Each photo has a set of technical details stored that describe information about the photo called the metadata.
 The metadata stores a Date Taken Original field, that includes a date and time that photo was taken.
 When attempting to store photos on file hosting services such as OneDrive or Nextcloud, the photos are ordered by that field.
@@ -159,15 +160,21 @@ I chose this project because there exists no Bulk Rename Utility program that ha
 
 %TODO: General work
 \subsection{Research}
-The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud.
-This becomes an incredibly challenging issue when trying to sort through all the photos stored.
-For example, the pictures below stored on Nextcloud are not ordered:
 
-The computer and corridor pictures are old photos but appear as current/new photos.
-Other Bulk Renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.
+%The main reason to change the EXIF (Exchangeable Image File Format) Date Taken Original on a photo is to ensure they are ordered correctly on file hosting services such as OneDrive and Nextcloud.
+%This becomes an incredibly challenging issue when trying to sort through all the photos stored.
+%For example, the pictures below stored on Nextcloud are not ordered:
+%
+%The computer and corridor pictures are old photos but appear as current/new photos.
+%Other Bulk Renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.%
+
+\subsubsection{Current Systems}
+There already exist multiple Bulk Rename programs
 
 %TODO: General work
 \subsubsection{Choosing a Programming Language}
+To begin this project, I will first be choosing what programming language to write this GUI software in.
+My preferred programming languages to write in ar
 Choosing what programming langauge to write this software in is mostly going to be dependent on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
 However, Python and Java are not native programming languages and require their own interpreters to convert from bytecode to executable machine code.
