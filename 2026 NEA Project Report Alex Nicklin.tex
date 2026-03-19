@@ -170,16 +170,16 @@ I chose this project because there exists no Bulk Rename Utility program that ha
 %Other Bulk Renaming programs allow you to edit the EXIF Create Datetime (Original) or EXIF Modify Datetime fields, but not the EXIF Date Taken fields, which is used by OneDrive and Nextcloud to order their photos.%
 
 %TODO: eh? not sure about actually doing this.
-\subsubsection{Current Systems}
+%\subsubsection{Current Systems}%
 
 %TODO: General work
 \subsubsection{Choosing a Programming Language}
 To begin this project, I will first be choosing what programming language to write this GUI software in.
-Choosing what programming langauge to write this software in is mostly going to be dependent on my general familiarity with the langauge.
+Choosing what programming langauge to write this software in is mostly going to be based on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
 However, Python and Java are not native programming languages and require their own interpreters to convert from bytecode to executable machine code.
 This would make my program not-native and require installation of other software to run.
-C++ is a native programming language since you can compile the code into an executable
+C++ is a native programming language since you can compile the code into an executable.
 
 %TODO: NEED a structure to compare different GUI frameworks!
 \subsubsection{Choosing a GUI Framework}
@@ -196,18 +196,26 @@ It's praised for multiple reasons:
     This makes UI programming cleaner and easier.
 \end{itemize}
 
-%TODO: Begin write-up!
+%TODO: Change explanation (it's a copy from the section above)!
 \subsubsection{QT Designer}
-
+QT Designer is a drag-and-drop software tool that is used for easily creating a GUI interface.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.857\textwidth]{Media/QT-Chain-Editor}
+    \caption{An example GUI made in QT Designer}
+\end{figure}
 
 \subsubsection{Choosing Libraries}
 spdlog\cite{spdlog} is a very fast C++ logging library.
 I will be using spdlog as a debugging tool because it creates an easy way to log details with different severities (e.g. info, debug and warning) including the location of the log in the code:
 
 %TODO: describe in detail WHY you used these libraries compared to others that were available.
-\bigskip
-\includegraphics[width=0.8\textwidth]{Media/2025-10-23 11_15_40 logging}
-\bigskip
+%TODO: snip OUT steph
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.857\textwidth]{Media/2025-10-23 11_15_40 logging}
+    \caption{spdlog logs with different severities}
+\end{figure}
 
 CLI11\cite{CLI11} is a command line parsing library that allows users to easily create and implement commands passed into the console.
 It makes debugging significantly easier during the initial stages of development.
@@ -222,19 +230,79 @@ My program will use the library to correctly initialize and for storing informat
 exiv2\cite{exiv2} is an EXIF read/write library that will be used for modifying the Date Taken fields on files.
 This is crucial for my program, as developing my own read/write functionality is a separate project of its own.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.6\textwidth]{Media/BulkRenameLimitedEXIF}
-    \caption{Bulk Rename Utility - EXIF options}
-    \label{fig:2}
-\end{figure}
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=.6\textwidth]{Media/BulkRenameLimitedEXIF}
+%    \caption{Bulk Rename Utility - EXIF options}
+%    \label{fig:2}
+%\end{figure}%
 
 %TODO: third party???
 \subsection{Identifying a Third-Party}
 test!
 
 \subsection{Project Objectives}
+\subsubsection{Renaming}
+\begin{enumerate}
+    \item Change the filename of one file into another filename
+    \item Change the filename of a group of files into another filename
+\end{enumerate}
 
+\subsubsection{Renaming Chain}
+\begin{enumerate}
+    \item Develop a group of chains where each adds to the resulting filename
+    \begin{enumerate}
+        \item Ability to turn off or on each chain
+        \item List of Chains:
+        \begin{enumerate}
+            \item Date
+            \begin{enumerate}
+                \item Ability to extract the date from the existing filename
+                \item Ability to use the date taken set in the metadata
+            \end{enumerate}
+            \item Seperator
+            \begin{enumerate}
+                \item Ability to append a group of chars to act as a seperator between chains
+            \end{enumerate}
+            \item Filename Body
+            \begin{enumerate}
+                \item Ability to append a specified string
+            \end{enumerate}
+            \item Numbering
+            \begin{enumerate}
+                \item Ability to append a number based on a starting value and a padding
+                \item Make the number dependent on the number of files selected
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    \item Develop a chain editor to change the order and the number of elements in the chain:
+    \begin{enumerate}
+        \item Ability to add and remove any number of chains from the default value
+        \item Ability to change any of the chains
+    \end{enumerate}
+\end{enumerate}
+\subsubsection{GUI}
+\begin{enumerate}
+    \item Develop a GUI homepage for renaming the files
+    \begin{enumerate}
+        \item Table showing details of all the files in the current folder:
+        \begin{enumerate}
+            \item Column's titles should show the current filename, filename to be set, the date taken original and the date taken original to be set
+            \item Ability to drag or click to select the files that you want to edit
+        \end{enumerate}
+        \item General Buttons:
+        \begin{enumerate}
+            \item Reset to Defaults: Updates the chain back to its default chain
+            \item Folder: Ability to change the folder that you are currently working in
+            \item Rename Files: After selecting the files you want to edit and editing the parameters of the elements in the chain, then it updates the file names to those set parameters.
+        \end{enumerate}
+        \item Renaming Chain:
+        \begin{enumerate}
+            \item Each of the chains should be interactable so that the user can set their parameters
+            \item Updates based on changes to the chain editor
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
 
 \section{Documented Design}
 \colorbox{BurntOrange}{The original design was for the Model-View-Controller pattern.}
