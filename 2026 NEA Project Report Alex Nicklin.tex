@@ -73,7 +73,7 @@
 
         \vspace{0.5cm}
 
-        19\textsuperscript{th} March 2026 \\
+        20\textsuperscript{th} March 2026 \\
 
     \end{center}
 \end{titlepage}
@@ -83,7 +83,7 @@
 %TODO: really want this?
 %\listoffigures%
 
-\section{Introduction and Declaration}\label{sec:introduction-and-declaration}
+\section{Declaration}\label{sec:declaration}
 
 %This goal of this project is the write a \textbf{utility program} for renaming files. The main target will be media files on the Ubuntu operating system.
 %
@@ -99,11 +99,10 @@
 
 %\textit{The design will be as simple as possible. Adding unnecessary back-ends, such as a database, will not be done. If a well known and maintained library for a feature is commonly available, it will be used.}%
 
-%TODO: General work
-\subsection{Introduction}
-This is the documentation for my AQA A-Level Computer Science NEA Project.
-The Latex typesetting is used for writing dissertations and papers at academic institutions, so I will be using it in this documentation for practise into my Computer Science degree.
-Purely for the reasons of practise, I will be including reference citations, a legal copyright notice and a declaration below.
+%\subsection{Introduction}
+%This is the documentation for my AQA A-Level Computer Science NEA Project.
+%The Latex typesetting is used for writing dissertations and papers at academic institutions, so I will be using it in this documentation for practise into my Computer Science degree.
+%Purely for the reasons of practise, I will be including reference citations, a legal copyright notice and a declaration below.%
 
 \subsection{Declaration}
 \textbf{All code - except those modules listed below - and this report is my own work.}
@@ -177,32 +176,23 @@ I chose this project because there exists no Bulk Rename Utility program that ha
 To begin this project, I will first be choosing what programming language to write this GUI software in.
 Choosing what programming langauge to write this software in is mostly going to be based on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
-However, Python and Java are not native programming languages and require their own interpreters to convert from bytecode to executable machine code.
+However, Python and Java are interpreted languages and require their own interpreters to convert from bytecode to executable machine code.
 This would make my program not-native and require installation of other software to run.
 C++ is a native programming language since you can compile the code into an executable.
 
-%TODO: NEED a structure to compare different GUI frameworks!
-\subsubsection{Choosing a GUI Framework}
-When researching the best GUI framework with C++ support to use for this application, QT was by far highly recommended as the best of them all.
-It's praised for multiple reasons:
-\begin{itemize}
-    \item Maturity: It's first stable release was in \href{https://wiki.control.fel.cvut.cz/osp/prednasky/gui/the-qt-story/}{September 1996}, in that time it's built a strong community that exists to help other people using the framework.
-    If you're having an issue, there is a very good chance that there are online forums on that subject with lots of documentation and details.
-    \item Custom UI Designer: QT Designer is a drag-and-drop software tool that is used for easily creating a GUI interface.
-    It saves the result as a .ui file and can be used on projects that use QT.
-    \item Easy-to-use Communication System: QT has an event communication system called \textbf{signals and slots}.
-    You can connect a widget (buttons, text boxes, labels, etc.) to a method in the code.
-    During an event, the widget emits a signal and the method receives the signal via a slot.
-    This makes UI programming cleaner and easier.
-\end{itemize}
-
-%TODO: Change explanation (it's a copy from the section above)!
-\subsubsection{QT Designer}
-QT Designer is a drag-and-drop software tool that is used for easily creating a GUI interface.
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.857\textwidth]{Media/QT-Chain-Editor}
-    \caption{An example GUI made in QT Designer}
+    \begin{minipage}{0.50\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Media/python-pipeline}
+        \caption{Python Build Pipeline}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Media/c++pipeline}
+        \caption{C++ Build Pipeline}
+    \end{minipage}\label{fig:figure2}
 \end{figure}
 
 \subsubsection{Choosing Libraries}
@@ -230,6 +220,43 @@ My program will use the library to correctly initialize and for storing informat
 exiv2\cite{exiv2} is an EXIF read/write library that will be used for modifying the Date Taken fields on files.
 This is crucial for my program, as developing my own read/write functionality is a separate project of its own.
 
+%TODO: NEED a structure to compare different GUI frameworks!
+\subsubsection{Choosing a GUI Framework}
+To ensure that this project remains cross-platform, the GUI framework must also be cross-platform.
+The two most popular frameworks with C++ support are QT and wxWidgets, both mature libraries released in the late 90s which have both built a strong community that exists to help other people using the framework.
+QT was praised significantly more for its professionalism and Custom UI Designer 'QT Designer': a drag-and-drop software tool that is used for easily creating a GUI interface.
+It saves the result as a .ui file and can be used on projects that have QT installed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Media/qt-designer}
+    \caption{QT Designer}
+\end{figure}
+
+QT was also praised for its Communication system called \textbf{signals and slots}.
+You can connect a widget (buttons, text boxes, labels, etc.) to a method in the code.
+During an event, the widget emits a signal and the method receives the signal via a slot to make UI programming cleaner and easier.
+
+wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
+%\begin{itemize}
+%    \item Maturity: It's first stable release was in \href{https://wiki.control.fel.cvut.cz/osp/prednasky/gui/the-qt-story/}{September 1996}, in that time it's built a strong community that exists to help other people using the framework.
+%    If you're having an issue, there is a very good chance that there are online forums on that subject with lots of documentation and details.
+%    \item Custom UI Designer: QT Designer is a drag-and-drop software tool that is used for easily creating a GUI interface.
+%    It saves the result as a .ui file and can be used on projects that use QT.
+%    \item Easy-to-use Communication System: QT has an event communication system called \textbf{signals and slots}.
+%    You can connect a widget (buttons, text boxes, labels, etc.) to a method in the code.
+%    During an event, the widget emits a signal and the method receives the signal via a slot.
+%    This makes UI programming cleaner and easier.
+%\end{itemize}%
+
+
+%\subsubsection{QT Designer}
+%QT Designer is a drag-and-drop software tool that is used for easily creating a GUI interface.
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=0.857\textwidth]{Media/QT-Chain-Editor}
+%    \caption{An example GUI made in QT Designer}
+%\end{figure}%
+
 %\begin{figure}[ht]
 %    \centering
 %    \includegraphics[width=.6\textwidth]{Media/BulkRenameLimitedEXIF}
@@ -239,7 +266,7 @@ This is crucial for my program, as developing my own read/write functionality is
 
 %TODO: third party???
 \subsection{Identifying a Third-Party}
-test!
+
 
 \subsection{Project Objectives}
 \subsubsection{Renaming}
@@ -302,10 +329,38 @@ test!
             \item Updates based on changes to the chain editor
         \end{enumerate}
     \end{enumerate}
+    \item Develop a GUI for the chain editor
+    \begin{enumerate}
+        \item Ability to change any of the set default elements to a different chain
+        \item Implement Buttons:
+        \begin{enumerate}
+            \item OK: All changes will be saved to the renaming chain
+            \item Reset: All changes will be reset to the default renaming chain
+            \item Cancel: All changes made will be removed.
+        \end{enumerate}
+    \end{enumerate}
 \end{enumerate}
 
+% ============================
+%
+% ============================
+
+% DOCUMENTED DESIGN
+
+% ============================
+%
+% ============================
+
+%TODO: rewrite
 \section{Documented Design}
-\colorbox{BurntOrange}{The original design was for the Model-View-Controller pattern.}
+\subsection{Description}
+This design section aims to create a blueprint for the GUI and code structure of the Bulk Rename Utility.
+Users are expecting to be able to interact with the GUI
+
+
+
+\subsection{Model View Controller}
+The original design was for the Model-View-Controller pattern.
 
 \begin{figure}[ht]
   \centering
