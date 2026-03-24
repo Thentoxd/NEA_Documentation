@@ -73,7 +73,7 @@
 
         \vspace{0.5cm}
 
-        20\textsuperscript{th} March 2026 \\
+        22\textsuperscript{nd} March 2026 \\
 
     \end{center}
 \end{titlepage}
@@ -345,18 +345,26 @@ wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
 %
 % ============================
 
-% DOCUMENTED DESIGN
+% DESIGN
 
 % ============================
 %
 % ============================
 
 %TODO: rewrite
-\section{Documented Design}
+\section{Design}
 \subsection{Description}
 This design section aims to create a blueprint for the GUI and code structure of the Bulk Rename Utility.
-Users are expecting to be able to interact with the GUI
+The main functionality of the program is written in C++ and uses the QT framework to develop the GUIs.
+The user will be able to interact with the GUI to modify each element's parameters in the renaming chain to produce a desired new name for the selected files.
+The user, using a separate GUI, will be able to modify the elements in the renaming chain, by adding, removing or changing.
 
+\bigskip
+
+The code structure follows object-oriented programming and Model-View-Controller pattern to maintain and understand easily.
+
+
+\subsection{GUI Design}
 
 
 \subsection{Model View Controller}
