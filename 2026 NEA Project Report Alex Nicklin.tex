@@ -12,6 +12,8 @@
 \usepackage{fullpage}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{wrapfig}
+
 
 \hypersetup{
     colorlinks=true,
@@ -351,31 +353,35 @@ wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
 %
 % ============================
 
-%TODO: rewrite
 \section{Design}
+%TODO: general work
 \subsection{Description}
 This design section aims to create a blueprint for the GUI and code structure of the Bulk Rename Utility.
 The main functionality of the program is written in C++ and uses the QT framework to develop the GUIs.
-The user will be able to interact with the GUI to modify each element's parameters in the renaming chain to produce a desired new name for the selected files.
+The user will be able to interact with the GUI to modify each element's parameters in the renaming chain to produce a desired new template for the selected files.
+The user should also be able to access three separate buttons to reset the renaming chain back to its original chain, change the current working folder and apply all the desired changes and rename the files.
 The user, using a separate GUI, will be able to modify the elements in the renaming chain, by adding, removing or changing.
 
 \bigskip
 
 The code structure follows object-oriented programming and Model-View-Controller pattern to maintain and understand easily.
 
+\subsection{Model View Controller}
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.38\textwidth]{Media/MVC-Process.svg}
+    \caption{Model View Control pattern}
+\end{wrapfigure}
+The Model View Controller (MVC) is a software design architecture commonly used when developing user interfaces.
+It's the most simple and original architecture that allows users to interact with the program, providing code structure and separating classes into their own separate functions rather than having one large class manage it all.
+I will be using it as a simple code architecture that is designed for users to interact with the program.
 
 \subsection{GUI Design}
-
-
-\subsection{Model View Controller}
-The original design was for the Model-View-Controller pattern.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=.6\textwidth]{Media/MVC}
-  \caption{Model View Control pattern}
-  \label{fig:3}
-\end{figure}
+%TODO: not sure what to write to introduce this section that doesn't copy from the section above
+\subsubsection{Interface GUI}
+The main interface GUI will provide the user with
+\subsubsection{Chain Editor GUI}
 
 \begin{figure}[ht]
     \centering
@@ -415,7 +421,7 @@ Problem that the Date widget is doing two separate functions - adding the date t
 \includegraphics[width=1\textwidth]{Media/2026-03-03 10_57_04-Media File Renamer}
 
 \vspace*{0.25cm}
-We now have a working, basic renamer utility.
+We now have a working, basic rename utility.
 But the limitation is we only have one fixed chain of renaming components.
 We can switch individual parts on or off, but we can't re-format the chain.
 Another issue with the design is that the "Date Prefix" component does two jobs at once.
@@ -451,6 +457,16 @@ It tries to create a new filename while also editing the metadata to change the 
     \item
     \item
 \end{itemize}
+
+% ============================
+%
+% ============================
+
+% Technical Solution
+
+% ============================
+%
+% ============================
 
 \section{Technical Solution}
 
