@@ -358,24 +358,34 @@ wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
 \subsection{Description}
 This design section aims to create a blueprint for the GUI and code structure of the Bulk Rename Utility.
 The main functionality of the program is written in C++ and uses the QT framework to develop the GUIs.
-The user will be able to interact with the GUI to modify each element's parameters in the renaming chain to produce a desired new template for the selected files.
+The GUI should produce a list of files in the selected current working directory for the user to interact with.
+The user should be able to select which files they'd like to modify by clicking and/or dragging over them in the GUI list.
+The user will be able to interact with the GUI to modify each element's parameters in the renaming chain to produce a desired new template for the selected files' names.
 The user should also be able to access three separate buttons to reset the renaming chain back to its original chain, change the current working folder and apply all the desired changes and rename the files.
 The user, using a separate GUI, will be able to modify the elements in the renaming chain, by adding, removing or changing.
 
 \bigskip
 
+blah! test
+
+\bigskip
+
 The code structure follows object-oriented programming and Model-View-Controller pattern to maintain and understand easily.
 
-\subsection{Model View Controller}
+\subsection{Software Design}
+\subsubsection{Model View Controller}
 
-\begin{wrapfigure}{l}{0.4\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
     \centering
     \includegraphics[width=0.38\textwidth]{Media/MVC-Process.svg}
     \caption{Model View Control pattern}
 \end{wrapfigure}
-The Model View Controller (MVC) is a software design architecture commonly used when developing user interfaces.
+The Model View Controller (MVC) is a software design architecture commonly used when developing programs with user interfaces.
 It's the most simple and original architecture that allows users to interact with the program, providing code structure and separating classes into their own separate functions rather than having one large class manage it all.
-I will be using it as a simple code architecture that is designed for users to interact with the program.
+I will be using it as a simple code architecture that is designed for users to interact with the program using interfaces and GUIs.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+
 
 \subsection{GUI Design}
 %TODO: not sure what to write to introduce this section that doesn't copy from the section above
