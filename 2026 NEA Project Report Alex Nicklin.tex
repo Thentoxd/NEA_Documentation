@@ -75,7 +75,7 @@
 
         \vspace{0.5cm}
 
-        22\textsuperscript{nd} March 2026 \\
+        17\textsuperscript{th} April 2026 \\
 
     \end{center}
 \end{titlepage}
@@ -175,10 +175,10 @@ I chose this project because there exists no Bulk Rename Utility program that ha
 
 %TODO: General work
 \subsubsection{Choosing a Programming Language}
-To begin this project, I will first be choosing what programming language to write this GUI software in.
+To begin this project, I will first be choosing what programming language to write this software in.
 Choosing what programming langauge to write this software in is mostly going to be based on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
-However, Python and Java are interpreted languages and require their own interpreters to convert from bytecode to executable machine code.
+Python and Java are interpreted languages and require their own interpreters to convert from bytecode to executable machine code.
 This would make my program not-native and require installation of other software to run.
 C++ is a native programming language since you can compile the code into an executable.
 
@@ -196,6 +196,9 @@ C++ is a native programming language since you can compile the code into an exec
         \caption{C++ Build Pipeline}
     \end{minipage}\label{fig:figure2}
 \end{figure}
+
+\subsubsection{Choosing a Development Environment}
+
 
 \subsubsection{Choosing Libraries}
 spdlog\cite{spdlog} is a very fast C++ logging library.
@@ -268,7 +271,8 @@ wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
 
 %TODO: third party???
 \subsection{Identifying a Third-Party}
-
+My end-users of this project are going to be friends and family that all have a keen interest in photography and/or a useful file renamer.
+I will also be uploading the source code to a public GitHub repository to gain other end-users.
 
 \subsection{Project Objectives}
 \subsubsection{Renaming}
@@ -377,14 +381,28 @@ The code structure follows object-oriented programming and Model-View-Controller
 
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
-    \includegraphics[width=0.38\textwidth]{Media/MVC-Process.svg}
+    \includegraphics[width=0.30\textwidth]{Media/MVC-Process.svg}
     \caption{Model View Control pattern}
 \end{wrapfigure}
 The Model View Controller (MVC) is a software design architecture commonly used when developing programs with user interfaces.
 It's the most simple and original architecture that allows users to interact with the program, providing code structure and separating classes into their own separate functions rather than having one large class manage it all.
 I will be using it as a simple code architecture that is designed for users to interact with the program using interfaces and GUIs.
 
+%TODO: Start work on!
+\subsubsection{Object Oriented Programming}
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+
+\subsubsection{Class Diagram}
+
+\subsubsection{Top-Down Diagram}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.6\textwidth]{Media/model_top_down_diagram}
+    \caption{Model Top-Down Diagram}
+    \label{fig:figure3}
+\end{figure}
+
+\subsubsection{Libraries}
 
 
 \subsection{GUI Design}
@@ -393,27 +411,27 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 The main interface GUI will provide the user with
 \subsubsection{Chain Editor GUI}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.6\textwidth]{Media/ModelProblem1}
-    \caption{Not sure what this was for}
-    \label{fig:4}
-\end{figure}
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=.6\textwidth]{Media/ModelProblem1}
+%    \caption{Not sure what this was for}
+%    \label{fig:4}
+%\end{figure}%
 
 
-\begin{center}
-    \includegraphics[width=.6\textwidth]{Media/ModelProblem2}
-\end{center}
+%\begin{center}
+%    \includegraphics[width=.6\textwidth]{Media/ModelProblem2}
+%\end{center}
+%
+%\begin{center}
+%    \includegraphics[width=1\textwidth]{Media/ModelProblem3}
+%\end{center}
+%
+%\begin{center}
+%    \includegraphics[width=1\textwidth]{Media/ModelProblem4}
+%\end{center}%
 
-\begin{center}
-    \includegraphics[width=1\textwidth]{Media/ModelProblem3}
-\end{center}
-
-\begin{center}
-    \includegraphics[width=1\textwidth]{Media/ModelProblem4}
-\end{center}
-
-\includegraphics[width=1\textwidth]{Media/Main Class Diagram}
+%\includegraphics[width=1\textwidth]{Media/Main Class Diagram}%
 
 \includegraphics[width=1\textwidth]{Media/2025-12-09 Media File Renamer}
 
