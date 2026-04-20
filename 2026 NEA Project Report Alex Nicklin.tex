@@ -125,7 +125,7 @@ Code Modules credited to other people:
 
 \section{Analysis}
 %TODO: General work (they are first being introduced to this now!)
-\subsection{Problem Analysis}
+\subsection{Problem Description}
 A Bulk File Rename Utility is a program that can rename a group of files automatically given a set of rules or patterns that the final file name has to follow.
 \begin{figure}[h]
     \centering
@@ -174,13 +174,16 @@ I chose this project because there exists no Bulk Rename Utility program that ha
 %\subsubsection{Current Systems}%
 
 %TODO: General work
+%ALL FROM HERE TILL CHOOSING GUI FRAMEWORK HAS BEEN COPIED INTO DESIGN
 \subsubsection{Choosing a Programming Language}
 To begin this project, I will first be choosing what programming language to write this software in.
 Choosing what programming langauge to write this software in is mostly going to be based on my general familiarity with the langauge.
 My top languages based on familiarity would be: C++, Java and Python.
-Python and Java are interpreted languages and require their own interpreters to convert from bytecode to executable machine code.
-This would make my program not-native and require installation of other software to run.
-C++ is a native programming language since you can compile the code into an executable.
+Python and Java both compile their source code into bytecode to be executed by a virtual machine.
+If I wrote my project using Python or Java, this would require users to download a virtual machine to simply execute my code.
+In my opinion, requiring end-users to do more work to run my project is never good
+On the other hand, C++ uses ahead-of-time compilation and produces an executable that can run on a chosen operating system, this means I would simply have to execute my final project on Windows and/or Linux and distribute that executable to my end-users.
+
 
 \begin{figure}[h]
     \centering
@@ -201,6 +204,7 @@ C++ is a native programming language since you can compile the code into an exec
 
 
 \subsubsection{Choosing Libraries}
+
 spdlog\cite{spdlog} is a very fast C++ logging library.
 I will be using spdlog as a debugging tool because it creates an easy way to log details with different severities (e.g. info, debug and warning) including the location of the log in the code:
 
@@ -272,7 +276,13 @@ wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
 %TODO: third party???
 \subsection{Identifying a Third-Party}
 My end-users of this project are going to be friends and family that all have a keen interest in photography and/or a useful file renamer.
-I will also be uploading the source code to a public GitHub repository to gain other end-users.
+Once my project Is complete I will be uploading the source code to a public GitHub repository to gain other end-users.
+For obvious reasons they won't be involved in the initial questionnaire.
+
+\subsubsection{Questionnaire}
+\begin{enumerate}
+    \item
+\end{enumerate}
 
 \subsection{Project Objectives}
 \subsubsection{Renaming}
@@ -362,6 +372,9 @@ I will also be uploading the source code to a public GitHub repository to gain o
 \subsection{Description}
 This design section aims to create a blueprint for the GUI and code structure of the Bulk Rename Utility.
 The main functionality of the program is written in C++ and uses the QT framework to develop the GUIs.
+
+\bigskip
+
 The GUI should produce a list of files in the selected current working directory for the user to interact with.
 The user should be able to select which files they'd like to modify by clicking and/or dragging over them in the GUI list.
 The user will be able to interact with the GUI to modify each element's parameters in the renaming chain to produce a desired new template for the selected files' names.
@@ -377,6 +390,77 @@ blah! test
 The code structure follows object-oriented programming and Model-View-Controller pattern to maintain and understand easily.
 
 \subsection{Software Design}
+\subsubsection{Choosing a Programming Language}
+To begin this project, I will first be choosing what programming language to write this software in.
+Choosing what programming langauge to write this software in is mostly going to be based on my general familiarity with the langauge.
+My top languages based on familiarity would be: C++, Java and Python.
+Python and Java both compile their source code into bytecode to be executed by a virtual machine.
+If I wrote my project using Python or Java, this would require users to download a virtual machine to simply execute my code.
+In my opinion, requiring end-users to do more work to run my project is never good
+On the other hand, C++ uses ahead-of-time compilation and produces an executable that can run on a chosen operating system, this means I would simply have to execute my final project on Windows and/or Linux and distribute that executable to my end-users.
+
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Media/python-pipeline}
+        \caption{Python Build Pipeline}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Media/c++pipeline}
+        \caption{C++ Build Pipeline}
+    \end{minipage}\label{fig:figure2}
+\end{figure}
+
+\subsubsection{Choosing a Development Environment}
+
+
+\subsubsection{Choosing Libraries}
+
+spdlog\cite{spdlog} is a very fast C++ logging library.
+I will be using spdlog as a debugging tool because it creates an easy way to log details with different severities (e.g. info, debug and warning) including the location of the log in the code:
+
+%TODO: describe in detail WHY you used these libraries compared to others that were available.
+%TODO: snip OUT steph
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.857\textwidth]{Media/2025-10-23 11_15_40 logging}
+    \caption{spdlog logs with different severities}
+\end{figure}
+
+CLI11\cite{CLI11} is a command line parsing library that allows users to easily create and implement commands passed into the console.
+It makes debugging significantly easier during the initial stages of development.
+
+\bigskip
+
+Json\cite{json} is a json parsing library used for storing data in a config.json file.
+My program will use the library to correctly initialize and for storing information.
+
+\bigskip
+
+exiv2\cite{exiv2} is an EXIF read/write library that will be used for modifying the Date Taken fields on files.
+This is crucial for my program, as developing my own read/write functionality is a separate project of its own.
+
+%TODO: NEED a structure to compare different GUI frameworks!
+\subsubsection{Choosing a GUI Framework}
+To ensure that this project remains cross-platform, the GUI framework must also be cross-platform.
+The two most popular frameworks with C++ support are QT and wxWidgets, both mature libraries released in the late 90s which have both built a strong community that exists to help other people using the framework.
+QT was praised significantly more for its professionalism and Custom UI Designer 'QT Designer': a drag-and-drop software tool that is used for easily creating a GUI interface.
+It saves the result as a .ui file and can be used on projects that have QT installed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Media/qt-designer}
+    \caption{QT Designer}
+\end{figure}
+
+QT was also praised for its Communication system called \textbf{signals and slots}.
+You can connect a widget (buttons, text boxes, labels, etc.) to a method in the code.
+During an event, the widget emits a signal and the method receives the signal via a slot to make UI programming cleaner and easier.
+
+wxWidgets doesn't have a separate UI designer and develops their UI in C++ code.
 \subsubsection{Model View Controller}
 
 \begin{wrapfigure}{r}{0.4\textwidth}
